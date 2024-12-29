@@ -11,7 +11,9 @@ frequencies = np.fft.fftfreq(t.shape[-1])  # Frequency axis
 
 # Compute the amplitude spectrum
 amplitude = np.abs(fft_result) / len(f)  # Normalize to preserve units
-print(np.max(amplitude))
+print(f'{np.max(amplitude):.3f}')
+
+
 amplitude[1:len(f)//2] *= 2  # Double the amplitudes for the single-sided spectrum
 
 # Plot the amplitude spectrum
